@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+table{
+    margin:100px auto;
+    border:2px solid red;
+}
+tr,td{
+    border:1px solid black;
+    text-align:center;
+}    
+    </style>
+</head>
+<body>
+    <form action="writeDb.php" method="post">
+    <table>
+        <tr>
+            <td>商品</td>
+            <td><input type='text' name="goods"></td>
+            <td><span id="spanMsg">请输入商品名称</span></td>
+        </tr>
+        <tr>
+            <td>总价</td>
+            <td><input type='text' name="totalPrice" ></td>
+            <td><span id="totalPriceMsg">总价格式 200.00</span></td>
+        </tr>
+        <tr>
+            <td>单价</td>
+            <td><input type='text' name="unitPrice" ></td>
+            <td><span id="unitPriceMsg">单价格式 200.00</span></td>
+        </tr>
+        <tr>
+            <td>规格</td>
+            <td><input type='text' name="spec" ></td>
+            <td><span id="specMsg">文字描述商品的特征</span></td>
+        </tr>
+        <tr>
+            <td>购买地</td>
+            <td><input type='text'  name="location"></td>
+            <td><span id="locationMsg">哪个商场买的，哪里买的</span></td>
+        </tr>
+        <tr>
+            <td>购买时间</td>
+            <td><input type='text' name="purchaseTime" ></td>
+            <td><span id="purchaseTimeMsg">时间格式 2099-09-09</span></td>
+        </tr>
+        <tr>
+            <td>批次</td>
+            <td><input type='text' name="batch" ></td>
+            <td><span id="batchMsg">第几批次，请写阿拉伯数字</span></td>
+        </tr>
+        <tr>
+            <td>评价</td>
+            <td><textarea type='text' name="comments" rols=3 cols=20></textarea></td>
+            <td><span id="commentsMsg">评价这个商品</span></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type='submit' id="submit"  value='写入数据库'</td>
+    </table>
+    </form>
+    <script>
+    
+    </script>
+</body>
+</html>
