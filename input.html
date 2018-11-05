@@ -67,7 +67,98 @@ tr,td{
     </table>
     </form>
     <script>
+function validate_goods(){
+    return validateNull("goods");
+}
+
+function validate_totalPrice(){
+    totalPriceReg = /^\d+(\.\d{1,2})?$/;
+    return validateRegex("totalPrice",totalPriceReg);
+}
+
+function validate_unitPrice(){
+    totalPriceReg = /^\d+(\.\d{1,2})?$/;
+    return validateRegex("unitPrice",unitPriceReg);
+}
+
+function validate_spec(){
+    return validateNull("spec");
+}
+
+function validate_location(){
+    return validateNull("location");
+}
+
+function validate_purchaseTime(){
+    purchaseTimeReg = /^(1[8-9]\d{2}|20\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+    return validateRegex("purchaseTime",purchaseTimeReg);
+
+}
+
+function validate_batch(){
+    batchReg = /^\d+$/;
+    return validateRegex()
+}
+
+
+function validateNull(elemName){
+    var elem = document.getElementById(elemName);
+    var msg = document.getElementById(elemName + 'Msg');
+    if (elem.value == '' || elem.value == ' ') {
+        msg.innerHTML = '您的输入不能为空';
+        msg.style.color = 'red';
+        return false;
+    } else {
+        msg.innerHTML = 'ok';
+        msg.style.color = 'green';
+        return true;
+    }
+}
+
+
+function validateRegex(elemName, regexp) {
+    var elem = document.getElementById(elemName);
+    var msg = document.getElementById(elemName + 'Msg')
+    elem.value = elem.vallue.replace(/^\s*/, '').replace(/\s*$/, '');
+    if (regexp.test(elem.value)) {
+        msg.innerHTML = 'ok';
+        msg.style.color = 'green';
+        return true;
+    } else {
+        msg.innerHTML = '您的输入不符合规则';
+        msg.style.color = 'red';
+        return false;
+    }
+}
+
+function validateAll(event){
+    flag = validate_goods() && validate_totalPrice() && 
+           validate_unitPrice() && validate_amount() && 
+           validate_spec() && validate_location() && 
+           validate_purchaseTime() && validate_batch()   ;
+    if(flag){
+        ob.submit();
+        return true;
+    }else{
+        event.preventDefault();
+        return false;
+     }
+}
+
+    function validateNow(){
     
+    }
+    function deleteSpace(){
+        var elems = document.getElementsByTagName() ;
+        elem.value = elem.value.replace(/^\s*/, '').replace(/\s*$/, '');
+    }
+
+    document.body.addEventListener("blur",deleteSpace);
+    document.body.addEventListener("blur",validateNow);
+
+    ob = document.getElementById("submit");
+    ob.addEventListener("click",validateAll,);
+
     </script>
 </body>
 </html>
