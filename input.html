@@ -148,16 +148,18 @@ function validateAll(event){
     function validateNow(){
     
     }
-    function deleteSpace(){
-        var elems = document.getElementsByTagName() ;
-        elem.value = elem.value.replace(/^\s*/, '').replace(/\s*$/, '');
+    function deleteSpace(event){
+        alert(event.target.name);
+//        document.body.removeEventListener('blur',deleteSpace,true);;
+//        var elems = document.getElementsByTagName() ;
+//        elem.value = elem.value.replace(/^\s*/, '').replace(/\s*$/, '');
     }
 
-    document.body.addEventListener("blur",deleteSpace);
-    document.body.addEventListener("blur",validateNow);
+    document.body.addEventListener("blur",deleteSpace,true);
+//    document.body.addEventListener("blur",validateNow);
 
-    ob = document.getElementById("submit");
-    ob.addEventListener("click",validateAll,);
+//    ob = document.getElementById("submit");
+ //   ob.addEventListener("click",validateAll,);
 
     </script>
 </body>

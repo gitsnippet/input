@@ -12,4 +12,4 @@ CREATE TABLE `goods` (
   `comments` varchar(200) NULL COMMENT '评价',
   PRIMARY KEY (`id`),
   UNIQUE KEY `goods` (`goods`,`totalPrice`,`unitPrice`,`amount`,`spec`,`location`,`purchaseTime`,`batch`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
