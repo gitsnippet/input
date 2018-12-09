@@ -1,1 +1,0 @@
-alter table goods AUTO_INCREMENT=1;
